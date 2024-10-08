@@ -19,10 +19,10 @@ public class MedicineController {
 
     }
     @PutMapping("/medicines")
-    private Integer AddMedicine(@RequestBody Medicine medicin){
+    private Integer AddMedicine(@RequestBody Medicine medicine){
 
-        medicineService.saveMedicine(medicin);
-        return Math.toIntExact(medicin.getId());
+        medicineService.saveMedicine(medicine);
+        return Math.toIntExact(medicine.getId());
 
     }
 

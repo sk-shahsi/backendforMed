@@ -3,9 +3,10 @@ package com.medcin.medcin.service;
 import com.medcin.medcin.entity.Medicine;
 import com.medcin.medcin.repo.MedicineRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class MedicineService {
     @Autowired
     MedicineRepo medicineRepo;

@@ -1,9 +1,9 @@
 package com.medcin.medcin.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
+
 @Entity
 public class Medicine {
     @Id
@@ -14,6 +14,9 @@ public class Medicine {
     private Double Price;
     private int noOfQuantity;
     boolean available;
+
+//    @OneToMany(mappedBy = "medicine", cascade = CascadeType.ALL)
+//    private List<Billing> billings;
 
     public Medicine() {
 
@@ -27,6 +30,8 @@ public class Medicine {
         this.noOfQuantity = noOfQuantity;
         this.available = available;
     }
+
+
 
     public Long getId() {
         return id;

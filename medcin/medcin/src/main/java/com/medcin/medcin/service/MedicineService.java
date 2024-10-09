@@ -21,9 +21,14 @@ public class MedicineService {
         return medicineRepo.findByName(name);
     }
     public void saveMedicine(Medicine medicin){
+
+        medicin.setAvailable(medicin.getNoOfQuantity() >0);
         medicineRepo.save(medicin);
     }
     public Optional<Medicine> findMedicineById(int id){
+
+
         return medicineRepo.findById(id);
     }
+
 }

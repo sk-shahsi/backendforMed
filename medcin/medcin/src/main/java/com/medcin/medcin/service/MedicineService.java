@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class MedicineService {
     @Autowired
@@ -20,5 +22,8 @@ public class MedicineService {
     }
     public void saveMedicine(Medicine medicin){
         medicineRepo.save(medicin);
+    }
+    public Optional<Medicine> findMedicineById(int id){
+        return medicineRepo.findById(id);
     }
 }

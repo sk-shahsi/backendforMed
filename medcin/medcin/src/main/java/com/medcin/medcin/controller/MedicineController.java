@@ -13,7 +13,7 @@ public class MedicineController {
 
     @Autowired
     MedicineService medicineService;
-    @PostMapping("/medicines/{name}")
+    @GetMapping("/medicines/{name}")
     private List<Medicine> getMedicines(@PathVariable("name")String name){
 
         return medicineService.findMedicineByName(name);
@@ -26,8 +26,8 @@ public class MedicineController {
         return Math.toIntExact(medicine.getId());
 
     }
-    @PostMapping("/medicine{id}")
-    private Optional<Medicine> findMedicineById(@PathVariable("id")int id){
+    @GetMapping("/{id}")
+    private Optional<Medicine> findMedicineById(@PathVariable int id){
 
         return medicineService.findMedicineById(id);
     }
